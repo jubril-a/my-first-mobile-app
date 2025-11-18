@@ -24,6 +24,8 @@ export default function RootLayout() {
       <Tabs.Screen
         name="second"
         options={{
+          popToTopOnBlur: true,
+          headerShown: false,
           tabBarIcon: ({color}) => (
             <MaterialCommunityIcons name="numeric-2-box" size={24} color={color} />
           )

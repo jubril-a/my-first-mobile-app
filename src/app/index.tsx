@@ -1,9 +1,21 @@
-import { Text, View } from "react-native";
+import { useEffect } from "react";
+import { View } from "react-native";
+import { Camera } from "react-native-vision-camera";
 
 export default function Index() {
+
+  useEffect(() => {
+    (async () => {
+      const cameraPermission = await Camera.requestCameraPermission();
+      const micPermission = await Camera.requestMicrophonePermission();
+
+      console.log(`Camera: ${cameraPermission} | Mic: ${micPermission}`);
+    })();
+  }, []);
+
   return (
-    <View className="flex-1 justify-center items-center bg-red-600">
-      <Text className="text-5xl text-white mb-4 text-center">Index</Text>
+    <View className="flex-1 bg-yellow-600">
+     
     </View>
   );
 }
